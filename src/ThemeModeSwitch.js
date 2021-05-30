@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   switchContainer: {
-    // marginLeft: "1.5rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

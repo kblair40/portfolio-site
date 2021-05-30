@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 import ThemeModeSwitch from "./ThemeModeSwitch";
 import { ThemeContext } from "./context/ThemeContext";
 
@@ -13,10 +15,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "1rem",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   grow: {
+    display: "flex",
     flexGrow: 1,
   },
   darkBg: {
@@ -24,17 +24,29 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   lightBg: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#f5f5f5", //light mode background
     color: "#424242",
   },
   navBtn: {
     textTransform: "none",
+    textDecoration: "none",
+  },
+  selectedDark: {
+    textDecoration: "none",
+    color: "white",
+  },
+  selectedLight: {
+    textDecoration: "none",
+    color: "black",
   },
 }));
-// #f5f5f5 light mode background
 export default function Navbar(props) {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const classes = useStyles();
+  const navLinkStyle = {
+    textDecoration: "none",
+    color: !isDarkMode ? "#424242" : "white",
+  };
   return (
     <div className={classes.root}>
       <AppBar
@@ -42,15 +54,37 @@ export default function Navbar(props) {
         className={isDarkMode ? classes.darkBg : classes.lightBg}
       >
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            K.B.
-          </Typography>
+          <NavLink activeStyle={navLinkStyle} to="/">
+            <Logo />
+          </NavLink>
+
           <div className={classes.grow}>
             <Button className={classes.navBtn} color="inherit">
-              About
+              <NavLink
+                style={{
+                  textDecoration: "none",
+                  color: isDarkMode ? "white" : "#424242",
+                }}
+                activeStyle={navLinkStyle}
+                to="/about"
+              >
+                About
+              </NavLink>
             </Button>
             <Button className={classes.navBtn} color="inherit">
-              Contact
+              {/* <NavLink activeStyle={navLinkStyle} to="/contact"> */}
+              <NavLink
+                style={{
+                  textDecoration: "none",
+                  color: isDarkMode ? "white" : "#424242",
+                }}
+                activeClassName={
+                  isDarkMode ? classes.selectedDark : classes.selectedLight
+                }
+                to="/contact"
+              >
+                Contact
+              </NavLink>
             </Button>
           </div>
 

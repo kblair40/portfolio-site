@@ -1,29 +1,48 @@
-import logo from "./logo.svg";
+import React, { useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import PageContainer from "./PageContainer";
+import ContactForm from "./ContactForm";
 import { ThemeProvider } from "./context/ThemeContext";
+import { withStyles } from "@material-ui/core/styles";
 import Navbar from "./Navbar";
 
-//  "#202124" - Darkest Gray -
-//  "#0A0924" - Darkest Navy Blue - current Navbar background
-//  "#0C082B" - Lighter Navy Blue - use for body?
+// Home (Top - About, Then links to projects)
+// Contact / Resume
 
-function App() {
+const styles = {
+  App: {
+    // height: "100vh",
+    // backgroundColor: "#424242",
+    // border: "2px solid black",
+  },
+};
+
+function App(props) {
+  const { classes } = props;
   return (
     <ThemeProvider>
-      <div className="App">
+      <div className={classes.App}>
         <Navbar />
-        {/* <Switch>
-      
-      <Route 
-        exact 
-        path="/"
-        render = {(routeProps) => ()}
-      />
-    </Switch> */}
+
+        <Switch>
+          <Route
+            path="/contact"
+            // render = {(routeProps) => ()}
+          >
+            <ContactForm />
+          </Route>
+          <Route
+            exact
+            path="/"
+            // render = {(routeProps) => ()}
+          >
+            <PageContainer />
+          </Route>
+        </Switch>
       </div>
     </ThemeProvider>
   );
 }
 
-export default App;
+export default withStyles(styles)(App);
