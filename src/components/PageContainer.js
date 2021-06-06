@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { ThemeContext } from "./context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import ProjectCardsContainer from "./ProjectCardsContainer";
 
 const styles = {

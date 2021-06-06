@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import PageContainer from "./PageContainer";
-import ContactForm from "./ContactForm";
+import PageContainer from "./components/PageContainer";
+import ContactForm from "./components/ContactForm";
 import { ThemeProvider } from "./context/ThemeContext";
 import { withStyles } from "@material-ui/core/styles";
-import Navbar from "./Navbar";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import ProjectCardNav from "./components/ProjectCardNav";
 
 // Home (Top - About, Then links to projects)
 // Contact / Resume
+// Build nice contact form even if it not needed
 
 const styles = {
   App: {
@@ -24,8 +27,10 @@ function App(props) {
     <ThemeProvider>
       <div className={classes.App}>
         <Navbar />
-
         <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route
             path="/contact"
             // render = {(routeProps) => ()}

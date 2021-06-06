@@ -7,7 +7,6 @@ const styles = {
     display: "flex",
     justifyContent: "space-evenly",
     flexWrap: "wrap",
-    // flexDirection: "column",
     height: "100vh",
   },
   darkBg: {
@@ -19,10 +18,6 @@ const ProjectCardsContainer = (props) => {
   const { classes } = props;
   return (
     <div className={classes.ProjectCardsContainer}>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
       <ProjectCard />
       <ProjectCard />
     </div>

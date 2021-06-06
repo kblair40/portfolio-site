@@ -7,9 +7,9 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { NavLink } from "react-router-dom";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import ThemeModeSwitch from "./ThemeModeSwitch";
-import { ThemeContext } from "./context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -72,7 +72,6 @@ export default function Navbar(props) {
               </NavLink>
             </Button>
             <Button className={classes.navBtn} color="inherit">
-              {/* <NavLink activeStyle={navLinkStyle} to="/contact"> */}
               <NavLink
                 style={{
                   textDecoration: "none",
