@@ -1,5 +1,5 @@
 import withStyles from "@material-ui/core/styles/withStyles";
-import React, { useContext } from "react";
+import React from "react";
 import ProjectCard from "./ProjectCard";
 
 const styles = {

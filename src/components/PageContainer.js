@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { ThemeContext } from "../context/ThemeContext";
 import ProjectCardsContainer from "./ProjectCardsContainer";
+import { useSelector } from "react-redux";
 
 const styles = {
   PageContainter: {
@@ -14,7 +14,8 @@ const styles = {
 };
 
 const PageContainer = (props) => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme);
+  const isDarkMode = theme.theme === "dark";
   const { classes } = props;
   return (
     <div className={`classes.PageContainer ${isDarkMode && classes.darkBg}`}>

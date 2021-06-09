@@ -15,7 +15,11 @@ export class Logo extends Component {
   }
 
   render() {
-    return <h3 className="title" id="logo"></h3>;
+    return (
+      <div className="logo-container">
+        <h3 className="title" id="logo"></h3>
+      </div>
+    );
   }
 }
 

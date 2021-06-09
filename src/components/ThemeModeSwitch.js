@@ -2,6 +2,8 @@ import React from "react";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { useDispatch } from "react-redux";
+import { themeActions } from "../store/theme";
 
 const useStyles = makeStyles((theme) => ({
   switchContainer: {
@@ -14,18 +16,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ThemeModeSwitch({ handleChange, isDarkMode }) {
+export default function ThemeModeSwitch({ isDarkMode }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const changeTheme = () => {
+    dispatch(themeActions.changeTheme());
+  };
+
   return (
     <div className={classes.switchContainer}>
       <Typography variant="p" className={classes.mode}>
         Light
       </Typography>
       <Switch
-        className={classes.switchBase}
         color="default"
         size="small"
-        onChange={handleChange}
+        onChange={changeTheme}
         checked={isDarkMode}
       />
       <Typography variant="p" className={classes.mode}>

@@ -3,7 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import ProjectCardWrapper from "./ProjectCardWrapper";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import { ThemeContext } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
 import ProjectCardNav from "./ProjectCardNav";
 
 const styles = {
@@ -13,7 +13,8 @@ const styles = {
 };
 
 const ProjectCard = (props) => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme);
+  const isDarkMode = theme.theme === "dark";
   const { classes } = props;
   return (
     <ProjectCardWrapper className={classes.Wrapper}>

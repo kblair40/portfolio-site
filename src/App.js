@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 import PageContainer from "./components/PageContainer";
 import ContactForm from "./components/ContactForm";
 import { ThemeProvider } from "./context/ThemeContext";
 import { withStyles } from "@material-ui/core/styles";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
-import ProjectCardNav from "./components/ProjectCardNav";
 
 // Home (Top - About, Then links to projects)
 // Contact / Resume

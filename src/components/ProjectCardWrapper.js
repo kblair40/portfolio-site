@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import Card from "@material-ui/core/Card";
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import { ThemeContext } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
 // import ProjectCardNav from "./ProjectCardNav";
 
 const styles = {
@@ -19,7 +19,8 @@ const styles = {
 // red - ff5f57, orange/yellow - ffbd2e, green - 28ca41
 
 const ProjectCardWrapper = (props) => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme);
+  const isDarkMode = theme.theme === "dark";
   const { classes } = props;
   return (
     <div className={classes.cardWrapper}>
