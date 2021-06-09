@@ -26,18 +26,14 @@ export default function ThemeModeSwitch({ isDarkMode }) {
 
   return (
     <div className={classes.switchContainer}>
-      <Typography variant="p" className={classes.mode}>
-        Light
-      </Typography>
+      <Typography className={classes.mode}>Light</Typography>
       <Switch
         color="default"
         size="small"
         onChange={changeTheme}
         checked={isDarkMode}
       />
-      <Typography variant="p" className={classes.mode}>
-        Dark
-      </Typography>
+      <Typography className={classes.mode}>Dark</Typography>
     </div>
   );
 }

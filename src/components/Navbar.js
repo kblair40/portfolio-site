@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar(props) {
   const theme = useSelector((state) => state.theme);
   const isDarkMode = theme.theme === "dark";
-  console.log("CURRENT THEME - FROM NAVBAR =", theme);
   const classes = useStyles();
   const navLinkStyle = {
     textDecoration: "none",
