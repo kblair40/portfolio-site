@@ -14,9 +14,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "1rem",
   },
+  navBtns: {
+    position: "absolute",
+    left: "8rem",
+  },
   grow: {
     display: "flex",
     flexGrow: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   darkBg: {
     backgroundColor: "#424242",
@@ -59,34 +65,35 @@ export default function Navbar(props) {
           </NavLink>
 
           <div className={classes.grow}>
-            <Button className={classes.navBtn} color="inherit">
-              <NavLink
-                style={{
-                  textDecoration: "none",
-                  color: isDarkMode ? "white" : "#424242",
-                }}
-                activeStyle={navLinkStyle}
-                to="/about"
-              >
-                About
-              </NavLink>
-            </Button>
-            <Button className={classes.navBtn} color="inherit">
-              <NavLink
-                style={{
-                  textDecoration: "none",
-                  color: isDarkMode ? "white" : "#424242",
-                }}
-                activeClassName={
-                  isDarkMode ? classes.selectedDark : classes.selectedLight
-                }
-                to="/contact"
-              >
-                Contact
-              </NavLink>
-            </Button>
+            <div className={classes.navBtns}>
+              <Button className={classes.navBtn} color="inherit">
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: isDarkMode ? "white" : "#424242",
+                  }}
+                  activeStyle={navLinkStyle}
+                  to="/about"
+                >
+                  About
+                </NavLink>
+              </Button>
+              <Button className={classes.navBtn} color="inherit">
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: isDarkMode ? "white" : "#424242",
+                  }}
+                  activeClassName={
+                    isDarkMode ? classes.selectedDark : classes.selectedLight
+                  }
+                  to="/hireme"
+                >
+                  Hire Me
+                </NavLink>
+              </Button>
+            </div>
           </div>
-
           {/* <Button color="inherit">Login</Button> */}
           <ThemeModeSwitch isDarkMode={isDarkMode} />
         </Toolbar>

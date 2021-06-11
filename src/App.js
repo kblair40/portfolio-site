@@ -2,11 +2,10 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 // import { CSSTransition, TransitionGroup } from "react-transition-group";
 import PageContainer from "./components/PageContainer";
-import ContactForm from "./components/ContactForm";
-import { ThemeProvider } from "./context/ThemeContext";
 import { withStyles } from "@material-ui/core/styles";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
+import Resume from "./components/Resume";
 
 // Home (Top - About, Then links to projects)
 // Contact / Resume
@@ -23,29 +22,27 @@ const styles = {
 function App(props) {
   const { classes } = props;
   return (
-    <ThemeProvider>
-      <div className={classes.App}>
-        <Navbar />
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route
-            path="/contact"
-            // render = {(routeProps) => ()}
-          >
-            <ContactForm />
-          </Route>
-          <Route
-            exact
-            path="/"
-            // render = {(routeProps) => ()}
-          >
-            <PageContainer />
-          </Route>
-        </Switch>
-      </div>
-    </ThemeProvider>
+    <div className={classes.App}>
+      <Navbar />
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route
+          path="/hireme"
+          // render = {(routeProps) => ()}
+        >
+          <Resume />
+        </Route>
+        <Route
+          exact
+          path="/"
+          // render = {(routeProps) => ()}
+        >
+          <PageContainer />
+        </Route>
+      </Switch>
+    </div>
   );
 }
 

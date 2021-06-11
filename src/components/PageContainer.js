@@ -4,7 +4,7 @@ import ProjectCardsContainer from "./ProjectCardsContainer";
 import { useSelector } from "react-redux";
 
 const styles = {
-  PageContainter: {
+  PageContainer: {
     height: "100vh",
     overflow: "scroll",
   },

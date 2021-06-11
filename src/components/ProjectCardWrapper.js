@@ -1,9 +1,10 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
 
+import { Motion, spring, presets } from "react-motion";
+
 import withStyles from "@material-ui/core/styles/withStyles";
 import { useSelector } from "react-redux";
-// import ProjectCardNav from "./ProjectCardNav";
 
 const styles = {
   cardWrapper: {
@@ -24,13 +25,14 @@ const ProjectCardWrapper = (props) => {
   const { classes } = props;
   return (
     <div className={classes.cardWrapper}>
+      {/* <Motion> */}
       <Card
         raised={true}
         className={`classes.Card ${isDarkMode && classes.darkBg}`}
       >
-        {/* <ProjectCardNav /> */}
         {props.children}
       </Card>
+      {/* </Motion> */}
     </div>
   );
 };

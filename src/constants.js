@@ -1,0 +1,2 @@
+export const ABOUT_TEXT =
+  "I have spent the bulk of my career in various sales roles, strengthening my communication skills while consistently exceeding quotas. In 2017, while working as a Mortgage Loan Officer, I found FreeCodeCamp and discovered my passion for development. I decided to make a career change and have been expanding my skills ever since. With my established performance and new skills, I am sure I can add value to your team.";
