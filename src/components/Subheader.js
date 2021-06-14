@@ -8,7 +8,6 @@ const styles = {
     alignItems: "center",
     width: "100%",
     flexWrap: "wrap",
-    // margin: "-1.5rem 0 -2.5rem 0",
     margin: "-1.5rem 0 0 0",
   },
   subheaderContent: {
@@ -48,15 +47,17 @@ const Subheader = ({
           <i className={classes.detail}>{detail}</i>
         </p>
       </div>
-      <div className={classes.links}>
-        <a href={liveLink} target="blank">
-          Live
-        </a>
-        &nbsp;|&nbsp;
-        <a href={githubLink} target="blank">
-          Github
-        </a>
-      </div>
+      {liveLink && githubLink && (
+        <div className={classes.links}>
+          <a href={liveLink} target="blank">
+            Live
+          </a>
+          &nbsp;|&nbsp;
+          <a href={githubLink} target="blank">
+            Github
+          </a>
+        </div>
+      )}
     </div>
   );
 };

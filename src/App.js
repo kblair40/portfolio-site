@@ -1,28 +1,27 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-// import { CSSTransition, TransitionGroup } from "react-transition-group";
-import PageContainer from "./components/PageContainer";
+import { useSelector } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Resume from "./components/Resume";
-
-// Home (Top - About, Then links to projects)
-// Contact / Resume
-// Build nice contact form even if it not needed
+import ProjectCardsContainer from "./components/ProjectCardsContainer";
 
 const styles = {
-  App: {
-    // height: "100vh",
-    // backgroundColor: "#424242",
-    // border: "2px solid black",
+  dark: {
+    backgroundColor: "#535353",
+  },
+  light: {
+    backgroundColor: "#fff",
   },
 };
 
 function App(props) {
   const { classes } = props;
+  const theme = useSelector((state) => state.theme);
+  const isDarkMode = theme.theme === "dark";
   return (
-    <div className={classes.App}>
+    <div className={isDarkMode ? classes.dark : classes.light}>
       <Navbar />
       <Switch>
         <Route path="/about">
@@ -39,7 +38,7 @@ function App(props) {
           path="/"
           // render = {(routeProps) => ()}
         >
-          <PageContainer />
+          <ProjectCardsContainer />
         </Route>
       </Switch>
     </div>

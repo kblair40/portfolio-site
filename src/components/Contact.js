@@ -7,12 +7,18 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 const styles = {
   header: {
     margin: "0 0 -.5rem 0",
-    // margin: 0,
+  },
+  contactContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   headerContact: {
     display: "flex",
-    justifyContent: "space-between",
+    flexDirection: "column",
+    alignItems: "center",
     margin: ".5rem 0 0 0",
+    textAlign: "center",
   },
   profileButtons: {
     display: "flex",
@@ -20,9 +26,10 @@ const styles = {
   },
 };
 
-const Contact = ({ classes }) => {
+const Contact = ({ classes, isDarkMode }) => {
+  const iconColor = { color: isDarkMode ? "white" : "#777" };
   return (
-    <div>
+    <div className={classes.contactContainer}>
       <h1 className={classes.header}>Kevin Blair</h1>
 
       <div className={classes.headerContact}>
@@ -35,14 +42,14 @@ const Contact = ({ classes }) => {
           <IconButton
             onClick={() => window.open("https://www.github.com/kblair40")}
           >
-            <GitHubIcon />
+            <GitHubIcon style={iconColor} fontSize="large" />
           </IconButton>
           <IconButton
             onClick={() =>
               window.open("https://www.linkedin.com/in/kevin-blair-74525935")
             }
           >
-            <LinkedInIcon />
+            <LinkedInIcon style={iconColor} fontSize="large" />
           </IconButton>
         </div>
       </div>

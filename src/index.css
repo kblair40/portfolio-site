@@ -23,7 +23,7 @@ h2 {
 h3 {
   font-size: 25px;
   font-family: "Comfortaa";
-  font-weight: 600;
+  font-weight: 700;
 }
 h4 {
   font-size: 20px;
@@ -34,8 +34,4 @@ h4 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-html {
-  background-color: "black";
 }

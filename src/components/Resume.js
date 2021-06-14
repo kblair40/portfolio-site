@@ -1,6 +1,6 @@
 import React from "react";
-
-import withStyles from "@material-ui/core/styles/withStyles";
+import { useSelector } from "react-redux";
+import { makeStyles } from "@material-ui/core/styles";
 
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
@@ -14,31 +14,36 @@ import {
   WATCHLIST_BULLETS,
 } from "../constants";
 
-const styles = {
-  container: {
+const useStyles = makeStyles({
+  container: (isDarkMode) => ({
     padding: "1rem",
     "& a": {
       textDecoration: "none",
-      color: "black",
+      color: isDarkMode ? "white" : "black",
+      transitionDuration: ".3s",
     },
     "& a:visited": {
-      color: "black",
+      color: isDarkMode ? "white" : "black",
     },
     "& a:hover": {
-      color: "blue",
       textDecoration: "underline",
+      transform: "scale(1.05)",
+      fontWeight: 600,
     },
-  },
+  }),
   sectionHeader: {
     margin: "3rem 0 -1rem 0",
   },
-};
+});
 
-const Resume = ({ classes }) => {
+const Resume = (props) => {
+  const theme = useSelector((state) => state.theme);
+  const isDarkMode = theme.theme === "dark";
+  const classes = useStyles(isDarkMode);
   return (
     <div className={classes.container}>
-      <ResumeContainer>
-        <Contact />
+      <ResumeContainer isDarkMode={isDarkMode}>
+        <Contact isDarkMode={isDarkMode} />
         <h3 className={classes.sectionHeader}>ABOUT</h3>
         <ResumeSection content={ABOUT_TEXT} />
         <h3 className={classes.sectionHeader}>SKILLS</h3>
@@ -111,8 +116,8 @@ const Resume = ({ classes }) => {
         />
         <h3 className={classes.sectionHeader}>EXPERIENCE</h3>
         <ResumeSection
-          subheader="Consultant"
-          subheaderDetails="Donyati, LLC &nbsp;(Mar 2020 - Mar 2021)"
+          subheader="Donyati, LLC"
+          subheaderDetails="Consultant &nbsp;(Mar 2020 - Mar 2021)"
           bullets={[
             "Built command line programs using Python for comparing and automating modifications to Excel spreadsheets",
             "Assisted in the implementation of EPM software for multiple Fortune 500 companies",
@@ -123,4 +128,4 @@ const Resume = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Resume);
+export default Resume;

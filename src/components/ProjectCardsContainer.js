@@ -1,6 +1,7 @@
 import withStyles from "@material-ui/core/styles/withStyles";
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import PageContainer from "./PageContainer";
 
 const styles = {
   ProjectCardsContainer: {
@@ -9,18 +10,17 @@ const styles = {
     flexWrap: "wrap",
     height: "100vh",
   },
-  darkBg: {
-    backgroundColor: "#424242",
-  },
 };
 
 const ProjectCardsContainer = (props) => {
   const { classes } = props;
   return (
-    <div className={classes.ProjectCardsContainer}>
-      <ProjectCard />
-      <ProjectCard />
-    </div>
+    <PageContainer>
+      <div className={classes.ProjectCardsContainer}>
+        <ProjectCard />
+        <ProjectCard />
+      </div>
+    </PageContainer>
   );
 };
 

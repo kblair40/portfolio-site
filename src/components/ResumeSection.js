@@ -56,14 +56,3 @@ const ResumeSection = (props) => {
 };
 
 export default withStyles(styles)(ResumeSection);
-
-// PROJECTS:
-// Memory Card Game ReactJS, Material-UI, Axios, JSS live | github A web-based version of the classic 1-player card game, built with ReactJS and Material-UI
-// ● Leveraged Material-UI framework to deliver a responsive app with DRY code.
-// ● Designed the app using JSS and Material-UI’s ‘withStyles’ API to give each component it’s own local scope and prevent
-// any potential class naming conflicts
-// Stock Watchlist ReactJS, Material-UI, Recharts, JSS live | github A web app that allows users to add stocks of their choosing and query those stocks for specific details and price history
-// ● Integrated Yahoo-Finance API with Recharts to display a stock’s price history dynamically according to the historical timeframe specified by the user.
-// ● Built UI by leveraging Material-UI’s ‘withStyles’ API and custom JSS to reduce file structure complexity
-// ● Overcame a major CORS issue preventing data retrieval with 3rd party browser extensions, and will ultimately setup a
-// proxy server to make the API calls as a permanent fix.
