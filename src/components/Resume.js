@@ -16,8 +16,10 @@ import {
 
 const useStyles = makeStyles({
   container: (isDarkMode) => ({
+    position: "relative",
     padding: "1rem",
     "& a": {
+      position: "relative",
       textDecoration: "none",
       color: isDarkMode ? "white" : "black",
       transitionDuration: ".3s",
@@ -27,8 +29,13 @@ const useStyles = makeStyles({
     },
     "& a:hover": {
       textDecoration: "underline",
-      transform: "scale(1.05)",
       fontWeight: 600,
+    },
+    "& h1": {
+      color: isDarkMode ? "#8aacc8" : "black",
+    },
+    "& h3": {
+      color: isDarkMode ? "#bbdefb" : "black",
     },
   }),
   sectionHeader: {

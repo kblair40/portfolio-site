@@ -30,7 +30,7 @@ const Contact = ({ classes, isDarkMode }) => {
   const iconColor = { color: isDarkMode ? "white" : "#777" };
   return (
     <div className={classes.contactContainer}>
-      <h1 className={classes.header}>Kevin Blair</h1>
+      <h1 className={classes.header}>KEVIN BLAIR</h1>
 
       <div className={classes.headerContact}>
         <div>

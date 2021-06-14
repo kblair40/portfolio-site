@@ -8,7 +8,7 @@ import ProjectCardNav from "./ProjectCardNav";
 
 const styles = {
   lightFont: {
-    color: "rgba(200,200,200,.8)",
+    color: "rgba(255,255,255,.60)",
   },
 };
 
@@ -23,7 +23,7 @@ const ProjectCard = (props) => {
         title="Title"
         subheader="subheader"
         subheaderTypographyProps={{
-          className: isDarkMode && classes.lightFont,
+          className: classes.lightFont,
         }}
       />
 

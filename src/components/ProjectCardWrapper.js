@@ -12,7 +12,7 @@ const styles = {
     width: "40%",
   },
   darkBg: {
-    backgroundColor: "#424242",
+    backgroundColor: "#121212",
     color: "#fff",
   },
 };

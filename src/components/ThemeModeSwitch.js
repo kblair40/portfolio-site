@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   mode: {
     fontSize: ".7rem",
   },
+  track: {
+    background: "white",
+  },
 }));
 
 export default function ThemeModeSwitch({ isDarkMode }) {
@@ -32,6 +35,7 @@ export default function ThemeModeSwitch({ isDarkMode }) {
         size="small"
         onChange={changeTheme}
         checked={isDarkMode}
+        classes={{ track: isDarkMode && classes.track }}
       />
       <Typography className={classes.mode}>Dark</Typography>
     </div>

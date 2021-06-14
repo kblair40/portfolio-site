@@ -9,7 +9,9 @@ import { NavLink } from "react-router-dom";
 import Logo from "../Logo";
 import ThemeModeSwitch from "./ThemeModeSwitch";
 import { useSelector } from "react-redux";
-
+// Darkest = #121212
+// Second Darkest = #424242
+// Third Darkest = #535353
 const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "1rem",
@@ -25,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   darkBg: {
-    backgroundColor: "#424242",
+    // backgroundColor: "#424242",
+    backgroundColor: "#121212",
     color: "#fff",
   },
   lightBg: {

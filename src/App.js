@@ -7,9 +7,13 @@ import Navbar from "./components/Navbar";
 import Resume from "./components/Resume";
 import ProjectCardsContainer from "./components/ProjectCardsContainer";
 
+// Darkest = #121212
+// Second Darkest = #424242
+// Third Darkest = #535353
+
 const styles = {
   dark: {
-    backgroundColor: "#535353",
+    backgroundColor: "#313131",
   },
   light: {
     backgroundColor: "#fff",

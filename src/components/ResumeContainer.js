@@ -19,9 +19,8 @@ const styles = {
 };
 
 const ResumeContainer = ({ classes, children, isDarkMode }) => {
-  console.log("MODE:", isDarkMode);
   const paperStyles = isDarkMode
-    ? { background: "#424242", color: "#fff" }
+    ? { background: "#121212", color: "white" }
     : {};
 
   return (
@@ -29,7 +28,11 @@ const ResumeContainer = ({ classes, children, isDarkMode }) => {
       <div
         className={`${classes.resumeContainer} ${isDarkMode && classes.dark}`}
       >
-        <Paper style={paperStyles} classes={{ root: classes.root }}>
+        <Paper
+          elevation={5}
+          style={paperStyles}
+          classes={{ root: classes.root }}
+        >
           {children}
         </Paper>
       </div>
