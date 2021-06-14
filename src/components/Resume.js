@@ -3,7 +3,12 @@ import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
 import ResumeSection from "./ResumeSection";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { ABOUT_TEXT } from "../constants";
+import {
+  ABOUT_TEXT,
+  SKILLS_TEXT,
+  PROJECTS_TEXT,
+  PROJECTS_BULLETS,
+} from "../constants";
 
 const styles = {
   container: {
@@ -28,6 +33,14 @@ const Resume = ({ classes }) => {
       <ResumeContainer>
         <Contact />
         <ResumeSection header="ABOUT" content={ABOUT_TEXT} />
+        <ResumeSection header="SKILLS" content={SKILLS_TEXT} />
+        <ResumeSection
+          header="PROJECTS"
+          subheader={"Memory Card Game"}
+          subheaderDetails={"ReactJS, Material-UI, Axios, JSS"}
+          content={PROJECTS_TEXT}
+          bullets={PROJECTS_BULLETS}
+        />
       </ResumeContainer>
     </div>
   );

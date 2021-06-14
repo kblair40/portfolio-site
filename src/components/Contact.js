@@ -18,11 +18,14 @@ const styles = {
 const Contact = ({ classes }) => {
   return (
     <React.Fragment>
-      <h1 className={classes.header}>Kevin Blair</h1>
-      <h5 className={classes.header}>Chicago, IL 60614</h5>
+      <h1 className={classes.header}>First Last</h1>
+      {/* <h5 className={classes.header}>Chicago, IL 60614</h5> */}
+      <h5 className={classes.header}>Location</h5>
       <div className={classes.contactInfo}>
-        <span>847-845-4635</span>
-        <span>kblair40@gmail.com</span>
+        {/* <span>847-845-4635</span> */}
+        <span>888-888-8888</span>
+        {/* <span>kblair40@gmail.com</span> */}
+        <span>email@email.com</span>
         <span>
           <a target="blank" href="https://linkedin.com/in/kevin-blair-74525935">
             linkedin

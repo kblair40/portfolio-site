@@ -25,14 +25,12 @@ const ProjectCardWrapper = (props) => {
   const { classes } = props;
   return (
     <div className={classes.cardWrapper}>
-      {/* <Motion> */}
       <Card
         raised={true}
         className={`classes.Card ${isDarkMode && classes.darkBg}`}
       >
         {props.children}
       </Card>
-      {/* </Motion> */}
     </div>
   );
 };
