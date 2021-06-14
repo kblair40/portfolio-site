@@ -6,8 +6,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import {
   ABOUT_TEXT,
   SKILLS_TEXT,
-  PROJECTS_TEXT,
-  PROJECTS_BULLETS,
+  MEMORY_TEXT,
+  MEMORY_BULLETS,
+  WATCHLIST_TEXT,
+  WATCHLIST_BULLETS,
 } from "../constants";
 
 const styles = {
@@ -25,6 +27,10 @@ const styles = {
       textDecoration: "underline",
     },
   },
+  sectionHeader: {
+    // marginBottom: 0,
+    margin: 0,
+  },
 };
 
 const Resume = ({ classes }) => {
@@ -32,15 +38,30 @@ const Resume = ({ classes }) => {
     <div className={classes.container}>
       <ResumeContainer>
         <Contact />
-        <ResumeSection header="ABOUT" content={ABOUT_TEXT} />
-        <ResumeSection header="SKILLS" content={SKILLS_TEXT} />
+        <h2 className={classes.sectionHeader}>ABOUT:</h2>
+        <ResumeSection content={ABOUT_TEXT} />
+        <h2 className={classes.sectionHeader}>SKILLS:</h2>
+        <ResumeSection content={SKILLS_TEXT} />
+        <h2 className={classes.sectionHeader}>PROJECTS:</h2>
         <ResumeSection
-          header="PROJECTS"
           subheader={"Memory Card Game"}
           subheaderDetails={"ReactJS, Material-UI, Axios, JSS"}
-          content={PROJECTS_TEXT}
-          bullets={PROJECTS_BULLETS}
+          content={MEMORY_TEXT}
+          bullets={MEMORY_BULLETS}
+          liveLink={"https://memory-6fc80b.netlify.app"}
+          githubLink={"https://github.com/kblair40/memory"}
         />
+        <ResumeSection
+          subheader={"Stock Watchlist"}
+          subheaderDetails={"ReactJS, Material-UI, Recharts, JSS"}
+          content={WATCHLIST_TEXT}
+          bullets={WATCHLIST_BULLETS}
+          liveLink={"https://watchlistkab.netlify.app"}
+          githubLink={"https://github.com/kblair40/watchlist"}
+        />
+        <h2 className={classes.sectionHeader}>
+          SOFTWARE DEVELOPMENT COURSEWORK:
+        </h2>
       </ResumeContainer>
     </div>
   );

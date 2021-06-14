@@ -8,6 +8,10 @@ const styles = {
     alignItems: "center",
     width: "100%",
     flexWrap: "wrap",
+    margin: "-.5rem 0 -.8rem 0",
+  },
+  subheaderHeader: {
+    margin: 0,
   },
   subheaderContent: {
     margin: 0,
@@ -18,25 +22,29 @@ const styles = {
   links: {
     display: "flex",
     alignItems: "center",
-    margin: "0",
+    margin: 0,
     // set margin with media queries
     // for when wrap occurs.
   },
 };
 
-const Subheader = ({ subheader, detail, classes }) => {
+const Subheader = ({ subheader, detail, classes, liveLink, githubLink }) => {
   return (
     <div className={classes.subheader}>
       <div className={classes.subheaderContent}>
-        <h4>{subheader}</h4>
+        <h4 className={classes.subheaderHeader}>{subheader}</h4>
         <p style={{ marginLeft: "1rem" }}>
           <i>{detail}</i>
         </p>
       </div>
       <div className={classes.links}>
-        <a href="https://memory-6fc80b.netlify.app">Live</a>
+        <a href={liveLink} target="blank">
+          Live
+        </a>
         &nbsp;|&nbsp;
-        <a href="https://github.com/kblair40/memory">Github</a>
+        <a href={githubLink} target="blank">
+          Github
+        </a>
       </div>
     </div>
   );

@@ -3,22 +3,28 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Subheader from "./Subheader";
 
 const styles = {
-  resumeHeader: {
-    marginBottom: 0,
-    color: "rgba(20, 20, 100, 1)",
+  sectionContent: {
+    margin: 0,
   },
   content: {
     marginTop: ".2rem",
     color: "rgba(20, 20, 100, .8)",
   },
   bullets: {
-    margin: 0,
+    // margin: 0,
   },
 };
 
 const ResumeSection = (props) => {
-  const { classes, header, subheader, subheaderDetails, content, bullets } =
-    props;
+  const {
+    classes,
+    subheader,
+    liveLink,
+    githubLink,
+    subheaderDetails,
+    content,
+    bullets,
+  } = props;
 
   const getBullets = (bullets) => {
     if (bullets) {
@@ -36,12 +42,18 @@ const ResumeSection = (props) => {
 
   const bulletsContent = getBullets(bullets);
   return (
-    <React.Fragment>
-      <h3 className={classes.resumeHeader}>{header}</h3>
-      {bullets && <Subheader subheader={subheader} detail={subheaderDetails} />}
+    <div className={classes.sectionContent}>
+      {bullets && (
+        <Subheader
+          subheader={subheader}
+          detail={subheaderDetails}
+          liveLink={liveLink}
+          githubLink={githubLink}
+        />
+      )}
       <p className={classes.content}>{content}</p>
       <div className={classes.bullets}>{bulletsContent}</div>
-    </React.Fragment>
+    </div>
   );
 };
 
