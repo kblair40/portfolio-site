@@ -1,4 +1,6 @@
 import React from "react";
+import Fade from "@material-ui/core/Fade";
+
 import withStyles from "@material-ui/core/styles/withStyles";
 import ProjectCardsContainer from "./ProjectCardsContainer";
 import { useSelector } from "react-redux";
@@ -18,9 +20,11 @@ const PageContainer = (props) => {
   const isDarkMode = theme.theme === "dark";
   const { classes } = props;
   return (
-    <div className={`classes.PageContainer ${isDarkMode && classes.darkBg}`}>
-      <ProjectCardsContainer />
-    </div>
+    <Fade in={true} timeout={700}>
+      <div className={`classes.PageContainer ${isDarkMode && classes.darkBg}`}>
+        <ProjectCardsContainer />
+      </div>
+    </Fade>
   );
 };
 

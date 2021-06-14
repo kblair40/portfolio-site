@@ -1,8 +1,11 @@
 import React from "react";
+
+import Slide from "@material-ui/core/Slide";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
 import ResumeSection from "./ResumeSection";
-import withStyles from "@material-ui/core/styles/withStyles";
 import {
   ABOUT_TEXT,
   SKILLS_TEXT,
