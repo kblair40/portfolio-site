@@ -8,16 +8,14 @@ const styles = {
     alignItems: "center",
     width: "100%",
     flexWrap: "wrap",
-    margin: "-.5rem 0 -.8rem 0",
-  },
-  subheaderHeader: {
-    margin: 0,
+    // margin: "-1.5rem 0 -2.5rem 0",
+    margin: "-1.5rem 0 0 0",
   },
   subheaderContent: {
     margin: 0,
     flexGrow: 1,
     display: "flex",
-    alignItems: "center",
+    alignItems: "baseline",
   },
   links: {
     display: "flex",
@@ -26,15 +24,28 @@ const styles = {
     // set margin with media queries
     // for when wrap occurs.
   },
+  detail: {
+    fontWeight: 300,
+  },
 };
 
-const Subheader = ({ subheader, detail, classes, liveLink, githubLink }) => {
+const Subheader = ({
+  subheader,
+  detail,
+  classes,
+  liveLink,
+  hasContent,
+  githubLink,
+}) => {
   return (
-    <div className={classes.subheader}>
+    <div
+      className={classes.subheader}
+      style={{ marginBottom: hasContent ? "-2.5rem" : "-1.5rem" }}
+    >
       <div className={classes.subheaderContent}>
-        <h4 className={classes.subheaderHeader}>{subheader}</h4>
+        <h4>{subheader}</h4>
         <p style={{ marginLeft: "1rem" }}>
-          <i>{detail}</i>
+          <i className={classes.detail}>{detail}</i>
         </p>
       </div>
       <div className={classes.links}>

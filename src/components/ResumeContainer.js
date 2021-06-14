@@ -6,7 +6,7 @@ const ResumeContainer = (props) => {
   return (
     <Fade in={true} timeout={700}>
       <div style={{ marginTop: "6rem" }}>
-        <Paper style={{ padding: ".5rem" }}>{props.children}</Paper>
+        <Paper style={{ padding: "1rem" }}>{props.children}</Paper>
       </div>
     </Fade>
   );

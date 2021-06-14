@@ -5,7 +5,7 @@ export const SKILLS_TEXT =
   "JavaScript/NodeJS, React, Redux, React-Router, HTML, CSS, Python, Bootstrap, Material-UI, MongoDB/Mongoose, SQL, Git/ GitHub, AJAX, AWS";
 
 export const MEMORY_TEXT =
-  "Memory Card Game ReactJS, Material-UI, Axios, JSS live | github A web-based version of the classic 1-player card game, built with ReactJS and Material-UI";
+  "A web-based version of the classic 1-player card game, built with ReactJS and Material-UI";
 
 export const MEMORY_BULLETS = [
   "Leveraged Material-UI framework to deliver a responsive app with DRY code.",

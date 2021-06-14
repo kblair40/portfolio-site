@@ -6,16 +6,13 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const styles = {
   header: {
-    margin: 0,
-  },
-  headerContainer: {
-    width: "100%",
+    margin: "0 0 -.5rem 0",
+    // margin: 0,
   },
   headerContact: {
     display: "flex",
-    // flexDirection: "column",
     justifyContent: "space-between",
-    margin: ".5rem 0",
+    margin: ".5rem 0 0 0",
   },
   profileButtons: {
     display: "flex",
@@ -25,15 +22,15 @@ const styles = {
 
 const Contact = ({ classes }) => {
   return (
-    <div className={classes.headerContainer}>
+    <div>
       <h1 className={classes.header}>Kevin Blair</h1>
-      <h5 className={classes.header}>Chicago, IL 60614</h5>
+
       <div className={classes.headerContact}>
         <div>
+          <div>Chicago, IL 60614</div>
           <div>847-845-4635</div>
           <div>kblair40@gmail.com</div>
         </div>
-        {/* <div className={classes.profileButtons}> */}
         <div>
           <IconButton
             onClick={() => window.open("https://www.github.com/kblair40")}

@@ -4,14 +4,11 @@ import Subheader from "./Subheader";
 
 const styles = {
   sectionContent: {
-    margin: 0,
+    marginBottom: "-1rem",
   },
-  content: {
-    marginTop: ".2rem",
-    color: "rgba(20, 20, 100, .8)",
-  },
+  content: {},
   bullets: {
-    // margin: 0,
+    marginTop: "-.5rem",
   },
 };
 
@@ -29,7 +26,7 @@ const ResumeSection = (props) => {
   const getBullets = (bullets) => {
     if (bullets) {
       return (
-        <ul>
+        <ul className={classes.bullets}>
           {bullets.map((bullet) => (
             <li>{bullet}</li>
           ))}
@@ -49,10 +46,11 @@ const ResumeSection = (props) => {
           detail={subheaderDetails}
           liveLink={liveLink}
           githubLink={githubLink}
+          hasContent={content ? true : false}
         />
       )}
-      <p className={classes.content}>{content}</p>
-      <div className={classes.bullets}>{bulletsContent}</div>
+      {content && <p className={classes.content}>{content}</p>}
+      {bulletsContent}
     </div>
   );
 };
