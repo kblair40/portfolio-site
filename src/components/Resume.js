@@ -23,19 +23,20 @@ const useStyles = makeStyles({
       textDecoration: "none",
       color: isDarkMode ? "white" : "black",
       transitionDuration: ".3s",
+      fontWeight: 600,
     },
     "& a:visited": {
       color: isDarkMode ? "white" : "black",
     },
     "& a:hover": {
       textDecoration: "underline",
-      fontWeight: 600,
+      color: isDarkMode ? "rgba(255,255,255,0.6)" : "black",
     },
     "& h1": {
-      color: isDarkMode ? "#8aacc8" : "black",
+      color: isDarkMode ? "rgba(255,255,255,0.87)" : "black",
     },
     "& h3": {
-      color: isDarkMode ? "#bbdefb" : "black",
+      color: isDarkMode ? "rgba(255,255,255,0.87)" : "black",
     },
   }),
   sectionHeader: {
@@ -52,9 +53,17 @@ const Resume = (props) => {
       <ResumeContainer isDarkMode={isDarkMode}>
         <Contact isDarkMode={isDarkMode} />
         <h3 className={classes.sectionHeader}>ABOUT</h3>
-        <ResumeSection content={ABOUT_TEXT} />
+        <ResumeSection
+          content={ABOUT_TEXT}
+          isDarkMode={isDarkMode}
+          needsDivider={true}
+        />
         <h3 className={classes.sectionHeader}>SKILLS</h3>
-        <ResumeSection content={SKILLS_TEXT} />
+        <ResumeSection
+          content={SKILLS_TEXT}
+          isDarkMode={isDarkMode}
+          needsDivider={true}
+        />
         <h3 className={classes.sectionHeader}>PROJECTS</h3>
         <ResumeSection
           subheader="Memory Card Game"
@@ -63,7 +72,9 @@ const Resume = (props) => {
           bullets={MEMORY_BULLETS}
           liveLink="https://memory-6fc80b.netlify.app"
           githubLink="https://github.com/kblair40/memory"
+          isDarkMode={isDarkMode}
         />
+
         <ResumeSection
           subheader="Stock Watchlist"
           subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
@@ -71,8 +82,9 @@ const Resume = (props) => {
           bullets={WATCHLIST_BULLETS}
           liveLink="https://watchlistkab.netlify.app"
           githubLink="https://github.com/kblair40/watchlist"
+          isDarkMode={isDarkMode}
+          needsDivider={true}
         />
-
         <h3 className={classes.sectionHeader}>
           SOFTWARE DEVELOPMENT COURSEWORK
         </h3>
@@ -82,6 +94,8 @@ const Resume = (props) => {
           bullets={[
             "Covered ReactJS class and functional components, in addition to hooks, Context API, React-Router and NextJS",
           ]}
+          isDarkMode={isDarkMode}
+          needsDivider={false}
         />
         <ResumeSection
           subheader="The Web Developer Bootcamp 2021"
@@ -90,6 +104,7 @@ const Resume = (props) => {
             "Learned principles of responsive design implemented with CSS Flexbox, Grid and media queries",
             "Gained a significantly greater understanding of the DOM, DOM events, AJAX, Prototypes, Classes and how to incorporate a NodeJS/MongoDB back-end with a JavaScript/HTML/CSS front-end",
           ]}
+          isDarkMode={isDarkMode}
         />
         <ResumeSection
           subheader="AWS Certified Solutions Architect Associate 2020"
@@ -97,6 +112,7 @@ const Resume = (props) => {
           bullets={[
             "Gained the necessary knowledge to take and pass the AWS Certified Solutions Architect Associate exam in June, 2020",
           ]}
+          isDarkMode={isDarkMode}
         />
         <ResumeSection
           subheader="Complete Python Bootcamp From Zero to Hero in Python"
@@ -104,6 +120,7 @@ const Resume = (props) => {
           bullets={[
             "Learned Python starting with the basics and ending with more advanced topics like decorators, generators, web scraping, exception handling, pandas/numpy libraries and GUI frameworks",
           ]}
+          isDarkMode={isDarkMode}
         />
         <ResumeSection
           subheader="FreeCodeCamp"
@@ -111,6 +128,8 @@ const Resume = (props) => {
           bullets={[
             "Learned the basics of HTML, CSS JavaScript, JQuery, the DOM, and responsive web design",
           ]}
+          isDarkMode={isDarkMode}
+          needsDivider={true}
         />
         <h3 className={classes.sectionHeader}>UNIVERSITY</h3>
         <ResumeSection
@@ -120,6 +139,8 @@ const Resume = (props) => {
             "Alabama Men’s Varsity Basketball Scout Team, 2011 - 2012",
             "Alabama Men’s Club Volleyball Team, 2009 - 2010",
           ]}
+          isDarkMode={isDarkMode}
+          needsDivider={true}
         />
         <h3 className={classes.sectionHeader}>EXPERIENCE</h3>
         <ResumeSection

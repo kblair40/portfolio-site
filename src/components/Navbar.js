@@ -3,41 +3,34 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import { NavLink } from "react-router-dom";
-import Logo from "../Logo";
+import Logo from "./Logo";
 import ThemeModeSwitch from "./ThemeModeSwitch";
 import { useSelector } from "react-redux";
-// Darkest = #121212
-// Second Darkest = #424242
-// Third Darkest = #535353
+
+import NavButton from "./NavButton";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "1rem",
   },
   navBtns: {
-    position: "absolute",
-    left: "8rem",
+    width: "15rem",
+    display: "flex",
+    justifyContent: "space-evenly",
   },
   grow: {
     display: "flex",
     flexGrow: 1,
-    justifyContent: "flex-end",
     alignItems: "center",
   },
   darkBg: {
-    // backgroundColor: "#424242",
     backgroundColor: "#121212",
     color: "#fff",
   },
   lightBg: {
     backgroundColor: "#f5f5f5", //light mode background
     color: "#424242",
-  },
-  navBtn: {
-    textTransform: "none",
-    textDecoration: "none",
   },
   selectedDark: {
     textDecoration: "none",
@@ -46,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   selectedLight: {
     textDecoration: "none",
     color: "black",
+  },
+  logo: {
+    // minWidth: "10rem",
   },
 }));
 export default function Navbar(props) {
@@ -56,6 +52,7 @@ export default function Navbar(props) {
     textDecoration: "none",
     color: !isDarkMode ? "#424242" : "white",
   };
+
   return (
     <div className={classes.root}>
       <AppBar
@@ -63,38 +60,26 @@ export default function Navbar(props) {
         className={isDarkMode ? classes.darkBg : classes.lightBg}
       >
         <Toolbar>
-          <NavLink activeStyle={navLinkStyle} to="/">
-            <Logo />
-          </NavLink>
+          <div className={classes.logo}>
+            <NavLink activeStyle={navLinkStyle} to="/">
+              <Logo />
+            </NavLink>
+          </div>
 
           <div className={classes.grow}>
             <div className={classes.navBtns}>
-              <Button className={classes.navBtn} color="inherit">
-                <NavLink
-                  style={{
-                    textDecoration: "none",
-                    color: isDarkMode ? "white" : "#424242",
-                  }}
-                  activeStyle={navLinkStyle}
-                  to="/about"
-                >
-                  About
-                </NavLink>
-              </Button>
-              <Button className={classes.navBtn} color="inherit">
-                <NavLink
-                  style={{
-                    textDecoration: "none",
-                    color: isDarkMode ? "white" : "#424242",
-                  }}
-                  activeClassName={
-                    isDarkMode ? classes.selectedDark : classes.selectedLight
-                  }
-                  to="/hireme"
-                >
-                  Hire Me
-                </NavLink>
-              </Button>
+              <NavButton
+                isDarkMode={isDarkMode}
+                endpoint="/about"
+                buttonText="About"
+                activeStyle={navLinkStyle}
+              />
+              <NavButton
+                isDarkMode={isDarkMode}
+                endpoint="/hireme"
+                buttonText="Hire Me"
+                activeStyle={navLinkStyle}
+              />
             </div>
           </div>
           {/* <Button color="inherit">Login</Button> */}

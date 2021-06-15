@@ -1,14 +1,22 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Divider from "@material-ui/core/Divider";
+
 import Subheader from "./Subheader";
 
 const styles = {
   sectionContent: {
     marginBottom: "-1rem",
   },
-  content: {},
   bullets: {
     marginTop: "-.5rem",
+  },
+  darkDivider: {
+    backgroundColor: "rgba(0,0,0,0.1)",
+  },
+  lightDivider: {
+    backgroundColor: "#bbdefb",
+    // backgroundColor: "rgba(255,255,255,.2)",
   },
 };
 
@@ -21,6 +29,8 @@ const ResumeSection = (props) => {
     subheaderDetails,
     content,
     bullets,
+    isDarkMode,
+    needsDivider,
   } = props;
 
   const getBullets = (bullets) => {
@@ -49,8 +59,13 @@ const ResumeSection = (props) => {
           hasContent={content ? true : false}
         />
       )}
-      {content && <p className={classes.content}>{content}</p>}
+      {content && <p>{content}</p>}
       {bulletsContent}
+      {needsDivider && (
+        <Divider
+          className={isDarkMode ? classes.lightDivider : classes.darkDivider}
+        />
+      )}
     </div>
   );
 };

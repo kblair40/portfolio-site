@@ -19,6 +19,10 @@ const ProjectCardsContainer = (props) => {
       <div className={classes.ProjectCardsContainer}>
         <ProjectCard />
         <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </div>
     </PageContainer>
   );

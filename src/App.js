@@ -13,6 +13,7 @@ import ProjectCardsContainer from "./components/ProjectCardsContainer";
 
 const styles = {
   dark: {
+    overflowY: "auto",
     backgroundColor: "#313131",
   },
   light: {

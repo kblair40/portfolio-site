@@ -20,7 +20,7 @@ const styles = {
 
 const ResumeContainer = ({ classes, children, isDarkMode }) => {
   const paperStyles = isDarkMode
-    ? { background: "#121212", color: "white" }
+    ? { background: "#121212", color: "rgba(255,255,255,0.87)" }
     : {};
 
   return (
